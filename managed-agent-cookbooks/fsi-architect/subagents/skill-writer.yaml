@@ -1,0 +1,29 @@
+name: fsi-skill-writer
+model: claude-sonnet-4-6
+
+system:
+  text: |
+    You are the FSI Skill Writer sub-agent. Create production-quality SKILL.md files
+    for the financial-services plugin ecosystem following the Agent Skills standard.
+    Return the SKILL.md content and any bundled resource files.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+
+output_schema:
+  type: object
+  properties:
+    skill_name:
+      type: string
+    skill_md:
+      type: string
+      description: Complete SKILL.md content
+    vertical:
+      type: string
+    eval_cases:
+      type: string
+      description: JSON string of eval test cases

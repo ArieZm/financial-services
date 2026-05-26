@@ -1,0 +1,36 @@
+name: fsi-publisher
+model: claude-sonnet-4-6
+
+system:
+  text: |
+    You are the FSI Publisher sub-agent. Handle the final publish workflow:
+    validate manifests, sync skills, bump versions, register in marketplace,
+    and prepare PRs. You are the only agent with Write permission.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read,  enabled: true }
+      - { name: write, enabled: true }
+      - { name: edit,  enabled: true }
+      - { name: grep,  enabled: true }
+      - { name: glob,  enabled: true }
+
+output_schema:
+  type: object
+  properties:
+    published:
+      type: boolean
+    plugin_name:
+      type: string
+    version:
+      type: string
+    marketplace_entry_added:
+      type: boolean
+    pr_url:
+      type: string
+    validation_errors:
+      type: array
+      items:
+        type: string

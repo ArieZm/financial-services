@@ -1,0 +1,22 @@
+[
+  {
+    "trigger": "Build a new skill for analyzing convertible bond pricing",
+    "expected_behavior": "Route to domain-expert for scoping, then skill-writer for SKILL.md creation, then eval-runner for testing"
+  },
+  {
+    "trigger": "Create a new insurance vertical with underwriting and claims skills",
+    "expected_behavior": "Route to domain-expert for vertical scoping, then scaffolder for structure, then skill-writer for each skill"
+  },
+  {
+    "trigger": "Evaluate the pitch-agent and tell me how it performs",
+    "expected_behavior": "Route to eval-runner for benchmarking, then domain-expert for accuracy review, produce consolidated report"
+  },
+  {
+    "trigger": "This credit-risk-scorer skill is ready to publish",
+    "expected_behavior": "Route to publisher for pre-publish checklist, verify eval and compliance gates, create PR"
+  },
+  {
+    "trigger": "I need a managed agent for the fund-admin workflow",
+    "expected_behavior": "Route to scaffolder to create the managed-agent cookbook structure with agent.yaml and subagents"
+  }
+]
