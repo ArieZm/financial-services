@@ -1,0 +1,8 @@
+{
+  "name": "fsi-architect",
+  "version": "0.1.0",
+  "description": "Pipeline orchestrator for creating, evaluating, and publishing financial-services plugins, skills, and agents. Routes requests to specialist agents: fsi-skill-writer, fsi-plugin-scaffolder, fsi-eval-runner, fsi-compliance-reviewer, fsi-domain-expert, and fsi-publisher.",
+  "author": {
+    "name": "Anthropic FSI"
+  }
+}

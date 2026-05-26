@@ -1,0 +1,51 @@
+[
+  {
+    "prompt": "Write a credit memo for a $2 billion Term Loan B financing to support the leveraged buyout of a mid-cap US industrial manufacturer (Roper Technologies, ROP). Entry leverage is 5.5x EBITDA. Include historical financials, pro forma capitalization, base and downside projections, covenant analysis, and a recommendation.",
+    "expected_behavior": "Produces a structured credit memo with all 9 required sections. Historical financials show 3-5 years of revenue, EBITDA, leverage, and coverage trends. Pro forma cap table shows the TLB tranche with correct total leverage. Projections show leverage declining over 3-5 years with mandatory amortization. Downside scenario shows when covenants would break. Recommendation includes conditions and monitoring requirements.",
+    "assertions": [
+      "Credit memo includes all 9 required sections: Executive Summary, Company Overview, Industry Analysis, Financial Analysis, Credit Strengths, Credit Risks, Covenant Analysis, Stress Test, Recommendation",
+      "Executive Summary states a clear recommendation (Approve/Approve with Conditions/Decline)",
+      "Historical financials table includes at least 3 years of revenue, EBITDA, leverage ratio, and interest coverage",
+      "Pro forma capitalization table shows the $2B TLB and total debt/EBITDA near 5.5x",
+      "Leverage trajectory shows declining debt/EBITDA over the projection period",
+      "Downside scenario identifies specific revenue decline threshold where covenants break",
+      "Credit rating referenced from Moody's or S&P (sourced from MCP or filing)",
+      "Data sources cited with as-of dates"
+    ],
+    "difficulty": "medium",
+    "skill_type": "credit-analysis"
+  },
+  {
+    "prompt": "Build a credit scorecard in Excel for evaluating HCA Healthcare (HCA). Score all quantitative and qualitative factors, map to an internal rating, and compare against 4 peer hospitals/health systems (UHS, THC, CYH, LPLA). Show the weighted scoring framework with conditional formatting.",
+    "expected_behavior": "Excel workbook with Summary, Quantitative Scoring, Qualitative Scoring, Historical Financials, and Peer Comparison tabs. Quantitative scores driven by formulas from historical data. Qualitative scores have analyst rationale in cell comments. Peer comparison shows same scorecard applied to all 5 companies. Overall rating maps to Moody's/S&P equivalent.",
+    "assertions": [
+      "Excel workbook has at least 5 tabs matching the specified structure",
+      "Quantitative factors use formula-driven scores (not hardcoded) based on the scoring ranges",
+      "All 6 quantitative factors present: Leverage, Interest Coverage, FCF/Debt, Revenue Stability, Margin Stability, Liquidity",
+      "All 6 qualitative factors present: Market Position, Industry Outlook, Management, Diversification, Asset Coverage, Sponsor Quality",
+      "Weighted score formula correctly sums (factor score × weight) across all factors",
+      "Overall weighted score maps to an internal rating with Moody's/S&P equivalent",
+      "Peer comparison tab includes at least 4 comparable companies scored on the same framework",
+      "Conditional formatting applied: green for scores 8-10, yellow for 5-7, red for 1-4",
+      "Blue font for inputs, black for formulas"
+    ],
+    "difficulty": "hard",
+    "skill_type": "credit-analysis"
+  },
+  {
+    "prompt": "Perform a covenant analysis for Tesla (TSLA) based on their current credit agreements. Project quarterly covenant compliance for the next 8 quarters, run a stress test showing when covenants would break under 10%, 20%, and 30% revenue decline scenarios, and document all EBITDA adjustments permitted under the credit agreement.",
+    "expected_behavior": "Excel workbook with Covenant Summary Dashboard showing current compliance status with traffic-light formatting, quarterly projections showing headroom trajectory, stress test matrix identifying break points, and EBITDA adjustments tab documenting permitted addbacks. Should note that Tesla has a unique credit profile as an investment-grade-adjacent company with significant capex needs.",
+    "assertions": [
+      "Covenant Summary Dashboard shows at least 3 financial covenants with actual values, covenant levels, cushion, and pass/fail status",
+      "Quarterly projections cover at least 8 quarters forward",
+      "Stress test shows results for at least 3 revenue decline scenarios",
+      "Stress test identifies the specific quarter and covenant that breaks first in each scenario",
+      "EBITDA adjustments tab lists permitted addbacks with credit agreement section references",
+      "Conditional formatting uses green/yellow/red for covenant status",
+      "Cushion calculated correctly as difference between actual and covenant level",
+      "Warning threshold flags covenants with less than 20% cushion"
+    ],
+    "difficulty": "hard",
+    "skill_type": "credit-analysis"
+  }
+]

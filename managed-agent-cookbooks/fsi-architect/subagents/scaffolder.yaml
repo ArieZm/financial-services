@@ -1,0 +1,34 @@
+name: fsi-plugin-scaffolder
+model: claude-sonnet-4-6
+
+system:
+  text: |
+    You are the FSI Plugin Scaffolder sub-agent. Generate complete plugin directory
+    structures for agent-plugins, vertical-plugins, or managed-agent cookbooks.
+    Return the file structure and contents for each generated file.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+
+output_schema:
+  type: object
+  properties:
+    artifact_type:
+      type: string
+      enum: [agent-plugin, vertical-plugin, cookbook]
+    slug:
+      type: string
+    files:
+      type: array
+      items:
+        type: object
+        properties:
+          path:
+            type: string
+          content:
+            type: string
+      description: List of files to create with their content

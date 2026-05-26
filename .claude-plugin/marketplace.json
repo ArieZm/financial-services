@@ -103,6 +103,11 @@
       "name": "claude-for-msft-365-install",
       "source": "./claude-for-msft-365-install",
       "description": "Provision direct cloud access (Vertex AI, Bedrock, or LLM gateway) for the Claude Microsoft 365 add-in. Generates the customized manifest, walks through Azure admin consent, and writes per-user config via Graph extension attributes."
+    },
+    {
+      "name": "fsi-architect",
+      "source": "./plugins/agent-plugins/fsi-architect",
+      "description": "Pipeline orchestrator for creating, evaluating, and publishing financial-services plugins, skills, and agents"
     }
   ]
 }

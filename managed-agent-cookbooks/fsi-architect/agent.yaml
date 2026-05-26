@@ -1,0 +1,26 @@
+# FSI Architect — managed-agent cookbook
+
+name: fsi-architect
+model: claude-opus-4-7
+
+system:
+  file: ../../plugins/agent-plugins/fsi-architect/agents/fsi-architect.md
+  append: "You are running headless. Coordinate specialist agents to produce artifacts in ./out/."
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read,  enabled: true }
+      - { name: grep,  enabled: true }
+      - { name: glob,  enabled: true }
+
+skills:
+  - { from_plugin: ../../plugins/agent-plugins/fsi-architect }
+
+callable_agents:
+  - { manifest: ./subagents/domain-expert.yaml }
+  - { manifest: ./subagents/skill-writer.yaml }
+  - { manifest: ./subagents/scaffolder.yaml }
+  - { manifest: ./subagents/eval-runner.yaml }
+  - { manifest: ./subagents/publisher.yaml }   # only leaf with Write

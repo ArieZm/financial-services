@@ -1,0 +1,38 @@
+name: fsi-domain-expert
+model: claude-sonnet-4-6
+
+system:
+  text: |
+    You are the FSI Domain Expert sub-agent. Provide financial industry domain knowledge
+    for requirements analysis, data provider selection, regulatory guidance, and accuracy review.
+    Return structured specifications that other agents can act on.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+
+output_schema:
+  type: object
+  properties:
+    vertical:
+      type: string
+      description: Target vertical for the skill/plugin
+    requirements:
+      type: string
+      description: Structured requirements specification
+    data_providers:
+      type: array
+      items:
+        type: string
+      description: Recommended MCP providers
+    regulatory_notes:
+      type: string
+      description: Applicable regulatory considerations
+    test_scenarios:
+      type: array
+      items:
+        type: string
+      description: Recommended test scenarios

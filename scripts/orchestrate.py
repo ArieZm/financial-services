@@ -24,6 +24,9 @@ ALLOWED_TARGETS = {
     "pitch-agent", "market-researcher", "earnings-reviewer", "meeting-prep-agent",
     "model-builder", "gl-reconciler", "kyc-screener",
     "valuation-reviewer", "month-end-closer", "statement-auditor",
+    "fsi-architect", "fsi-skill-writer", "fsi-plugin-scaffolder",
+    "fsi-eval-runner", "fsi-compliance-reviewer", "fsi-domain-expert",
+    "fsi-publisher",
 }
 
 HANDOFF_PAYLOAD_SCHEMA = {

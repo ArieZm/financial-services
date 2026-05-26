@@ -1,0 +1,36 @@
+name: fsi-eval-runner
+model: claude-sonnet-4-6
+
+system:
+  text: |
+    You are the FSI Eval Runner sub-agent. Run evaluations and benchmarks for
+    financial-services skills. Generate test cases, execute with-skill and baseline
+    runs, grade results with financial accuracy checks, and produce benchmark reports.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+output_schema:
+  type: object
+  properties:
+    skill_name:
+      type: string
+    pass_rate:
+      type: number
+    financial_accuracy:
+      type: number
+    benchmark_path:
+      type: string
+      description: Path to benchmark.json
+    verdict:
+      type: string
+      enum: [SHIP, SHIP_WITH_NOTES, BLOCK]
+    issues:
+      type: array
+      items:
+        type: string
