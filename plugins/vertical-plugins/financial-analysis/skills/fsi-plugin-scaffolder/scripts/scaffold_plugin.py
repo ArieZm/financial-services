@@ -11,7 +11,7 @@ import json
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[4]
+REPO_ROOT = Path(__file__).resolve().parents[6]
 
 MCP_PROVIDERS = {
     "daloopa": "https://mcp.daloopa.com/server/mcp",

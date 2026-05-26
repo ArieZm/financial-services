@@ -1,0 +1,49 @@
+[
+  {
+    "prompt": "Build a 3-statement financial model for Apple (AAPL) using the last 3 years of historical data and project 5 years forward. Use a top-down revenue approach with 5% growth declining to 3% by year 5.",
+    "expected_behavior": "Produces an Excel workbook with Cover, Assumptions, Income Statement, Balance Sheet, Cash Flow, Supporting Schedules, and Checks tabs. All historical data sourced from MCP providers. Revenue projections follow the specified growth trajectory. Balance sheet balances in every period. All checks pass green.",
+    "assertions": [
+      "Output is an Excel workbook (.xlsx) with at least 7 tabs",
+      "Balance sheet balances: total assets equal total liabilities plus equity in every projected period",
+      "Cash flow statement ending cash matches balance sheet cash in every period",
+      "All hardcoded inputs use blue font and are located on the Assumptions tab",
+      "Revenue growth rate declines from approximately 5% to 3% over the projection period",
+      "Historical data cites MCP source (Daloopa, FactSet, or similar)",
+      "Checks tab exists with balance check showing zero difference",
+      "No hardcoded numbers in formula cells on the Income Statement, Balance Sheet, or Cash Flow tabs",
+      "Retained earnings roll forward ties: beginning RE + net income - dividends = ending RE"
+    ],
+    "difficulty": "medium",
+    "skill_type": "financial-modeling"
+  },
+  {
+    "prompt": "Build a 3-statement model for a pre-revenue biotech company (MRNA) with only 2 years of history. Include the debt schedule and a DCF valuation with WACC sensitivity analysis.",
+    "expected_behavior": "Handles the edge case of a company with volatile/negative earnings. Revenue build should note the uncertainty. Debt schedule reflects the actual capital structure. DCF should flag that terminal value assumptions carry significant uncertainty for high-growth companies. Sensitivity table shows implied share price at different WACC and terminal growth combinations.",
+    "assertions": [
+      "Model handles negative net income without errors in the projection",
+      "Debt schedule includes all major debt instruments from the latest filing",
+      "DCF tab exists with WACC calculation, terminal value, and sensitivity table",
+      "WACC is between 7% and 15% (reasonable for a biotech company)",
+      "Terminal growth rate is between 1% and 4%",
+      "Sensitivity table shows at least a 3x3 matrix of WACC vs terminal growth",
+      "Balance sheet balances despite negative retained earnings",
+      "Assumptions tab flags elevated uncertainty for revenue projections"
+    ],
+    "difficulty": "hard",
+    "skill_type": "financial-modeling"
+  },
+  {
+    "prompt": "Build a simple 3-statement model for JPMorgan Chase (JPM) with 3 years of history and 3 years of projections. Focus on the core banking metrics: net interest income, provision for credit losses, and non-interest income.",
+    "expected_behavior": "Recognizes that bank models have different drivers than industrial companies. Revenue build should use NII + non-interest income rather than a simple revenue growth rate. Should note that standard working capital metrics (DSO, DIO, DPO) don't apply to banks. May flag that this skill is not ideal for bank-specific modeling but provides a reasonable general framework.",
+    "assertions": [
+      "Model distinguishes between net interest income and non-interest income",
+      "Provision for credit losses is modeled as a separate line item",
+      "Output acknowledges that bank-specific metrics differ from industrial companies",
+      "Balance sheet balances in all periods",
+      "Interest expense on the income statement is consistent with the debt/deposits schedule",
+      "All checks pass on the Checks tab"
+    ],
+    "difficulty": "hard",
+    "skill_type": "financial-modeling"
+  }
+]
